@@ -124,6 +124,9 @@ class AuthService: ObservableObject{
                 return completion(.failure(error))
             }else{
                 // re-fetch the currentUser
+                self.fetchCurrentAppUser { _ in
+                    completion(.success(()))
+                }
             }
             
         }
@@ -144,12 +147,4 @@ class AuthService: ObservableObject{
     }
 }
 
-struct SimpleError: Error{
-    let message: String
-    init(message: String) {
-        self.message = message
-    }
-    var localizedDescription: String {
-        return message
-    } // computed property
-}
+
