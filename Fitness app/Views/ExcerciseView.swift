@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ExcerciseView: View {
+    let excercise: ExcerciseModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(excercise.name)
+        
     }
 }
 
 #Preview {
-    ExcerciseView()
+    ExcerciseView(excercise: )
 }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-let test: ExcerciseModel = ExcerciseModel(name: "Weights", sets: 5, reps: 5, weight: 56.0)
+let test: ExcerciseModel = ExcerciseModel(name: "", sets: 5, reps: 5, weight: 56.0)
 
 struct RoundedShape: Shape{
     let corners: UIRectCorner
@@ -21,13 +21,15 @@ struct RoundedShape: Shape{
 struct ExcerciseDetail: View {
     let Detail: ExcerciseModel
     var body: some View {
-        VStack(alignment: .leading, spacing: 20){
-            Text("\(Detail.name)- Pushups")
+        VStack(alignment: .leading, spacing: 10){
+            Spacer()
+            Text("\(Detail.name)")
                 .font(.largeTitle)
                 .textCase(.uppercase)
                 .padding(.horizontal)
-            Text("To be more helpfull with your pushups get a pushup bar too which will make it easier to do them as show in the video")
-            
+            Text("While doing your weights with a resistance bands ")
+                
+            Spacer()
             
         }
     }
