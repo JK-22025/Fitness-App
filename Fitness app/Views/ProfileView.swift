@@ -31,7 +31,7 @@ struct ProfileView: View {
                     }
                     auth.updateProfile(displayName: newName) { result in
                         switch result {
-                        case .success(let success):
+                        case .success:
                             self.errorMessage = nil
                         case .failure(let failure):
                             self.errorMessage = failure.localizedDescription

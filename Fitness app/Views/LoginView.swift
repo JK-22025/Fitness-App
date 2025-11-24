@@ -61,3 +61,8 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
+
+
+
+// one collection - excersice
+//                 -  title, description, video url ()

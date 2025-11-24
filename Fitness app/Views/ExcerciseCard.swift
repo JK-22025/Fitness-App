@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let card: ExcerciseModel = ExcerciseModel(name: "Weights", sets: 5, reps: 5, weight: 56.0)
+let card: ExcerciseModel = ExcerciseModel(name: "Weights", sets: 5, reps: 5, weight: 56.0, videofilename: "")
 struct ExcerciseCard: View {
     let excercise: ExcerciseModel
     var body: some View {
@@ -20,7 +20,7 @@ struct ExcerciseCard: View {
                 
             }
             .padding()
-            .frame(width: 300, height: 300)
+            .frame(width: 300, height: 100)
             .background(Color(.gray))
             .clipShape(RoundedRectangle(cornerRadius: 30))
             

@@ -6,7 +6,10 @@
 //
 
 import SwiftUI
-let test: ExcerciseModel = ExcerciseModel(name: "", sets: 5, reps: 5, weight: 56.0)
+import AVKit
+
+
+let test: ExcerciseModel = ExcerciseModel(name: "Weights", sets: 5, reps: 5, weight: 56.0, videofilename: "Weights")
 
 struct RoundedShape: Shape{
     let corners: UIRectCorner
@@ -19,22 +22,28 @@ struct RoundedShape: Shape{
 }
 
 struct ExcerciseDetail: View {
+    
     let Detail: ExcerciseModel
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
-            Spacer()
+            VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: Detail.videofilename, withExtension: "mp4")!))
+                .frame(height: 400)
             Text("\(Detail.name)")
                 .font(.largeTitle)
                 .textCase(.uppercase)
                 .padding(.horizontal)
-            Text("While doing your weights with a resistance bands ")
+            Text("Follow while I'm working out with you! and do your best that u can")
+            
+            
                 
             Spacer()
             
         }
+        
+        }
     }
-}
+
 
 #Preview {
-    ExcerciseDetail(Detail: card)
+    ExcerciseDetail(Detail: test)
 }

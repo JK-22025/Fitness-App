@@ -7,14 +7,34 @@
 
 import SwiftUI
 
+let excercise: [ExcerciseModel] = [
+    .init(name: "Weights", sets: 5, reps: 5, weight: 59, videofilename: "Weights"),
+    .init(name: "Pushups", sets: 5, reps: 5, weight: 0, videofilename: "Pushups"),
+    .init(name: "Situps", sets: 5, reps: 5, weight: 0, videofilename: "Situps"),
+    .init(name: "Calesthenics", sets: 5, reps: 5, weight: 0, videofilename: "Calesthenics")
+]
 struct ExcerciseView: View {
-    let excercise: ExcerciseModel
+    
     var body: some View {
-        Text(excercise.name)
+        
+        // foreach
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(alignment: .center, spacing: 20){
+                ForEach(excercise, id: \.id) { excercise in
+                    NavigationLink(destination: ExcerciseDetail(Detail: excercise)){
+                        ExcerciseCard(excercise:   excercise)
+                    }
+                    
+                    
+                    
+                }
+            }
+        }
+        
         
     }
 }
 
 #Preview {
-    ExcerciseView(excercise: )
+    ExcerciseView()
 }

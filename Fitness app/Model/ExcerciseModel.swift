@@ -6,15 +6,16 @@
 //
 
 import Foundation
-
 struct ExcerciseModel: Identifiable{
     let id = UUID()
     let name: String
     let sets: Int
     let reps: Int
     let weight: Double?
+    let videofilename: String?
+    
 }
 
-enum Category: String{
+enum Excercise: String{
     case Calesthenics, Pushups, Situps, Weights
 }

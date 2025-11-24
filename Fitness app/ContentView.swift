@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @StateObject private var auth = AuthService.shared
     @State private var isLoaded = false
